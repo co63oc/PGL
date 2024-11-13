@@ -60,7 +60,7 @@ def lookup_table_gather(index, input):
 
 def _clone_var_in_block_(block, var):
     assert isinstance(var, fluid.Variable)
-    if var.desc.type() == fluid.core.VarDesc.VarType.LOD_TENSOR:
+    if var.desc.type() == fluid.core.VarDesc.VarType.DENSE_TENSOR:
         return block.create_var(
             name=var.name,
             shape=var.shape,
